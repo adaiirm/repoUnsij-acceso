@@ -9,5 +9,5 @@ import com.repoUnsij.auth.entites.Usuarios;
 
 @Repository
 public interface UsuariosRepository extends JpaRepository<Usuarios, Long>{
-    Optional<Usuarios> findByEmail(String email);
+    Optional<Usuarios> findByCorreo(String email);
 }

@@ -14,7 +14,6 @@ import com.repoUnsij.auth.entites.Usuarios;
 import com.repoUnsij.auth.response.ErrorResponse;
 import com.repoUnsij.auth.services.UsuariosService;
 
-//@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 @RequestMapping("/api/autorizacion")
 public class AutorizaciónController {
@@ -24,13 +23,13 @@ public class AutorizaciónController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Usuarios usuario) {
-        Optional<Usuarios> usuarioOptional = usuariosService.getUsuarioByEmail(usuario.getCorreo());
+        Optional<Usuarios> usuarioOptional = usuariosService.getUsuarioByCorreo(usuario.getCorreo());
 
         if (usuarioOptional.isPresent()) {
             Usuarios encontrado = usuarioOptional.get();
 
-            if (encontrado.getContraseña().equals(usuario.getContraseña())) {
-                return ResponseEntity.ok(encontrado);
+            if (encontrado.getContrasenia().equals(usuario.getContrasenia())) {
+                return new ResponseEntity<>(encontrado, HttpStatus.OK);
             } else {
                 return ResponseEntity
                         .status(HttpStatus.UNAUTHORIZED)

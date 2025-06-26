@@ -19,7 +19,7 @@ public class UsuariosService {
         return usuariosRepository.findById(id);
     }
 
-    public Optional<Usuarios> getUsuarioByEmail(String email) {
-    return usuariosRepository.findByEmail(email);
+    public Optional<Usuarios> getUsuarioByCorreo(String correo) {
+    return usuariosRepository.findByCorreo(correo);
 }
 }
