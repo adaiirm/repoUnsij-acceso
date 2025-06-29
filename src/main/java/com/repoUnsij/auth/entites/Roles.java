@@ -30,4 +30,9 @@ public class Roles {
     @OneToMany(mappedBy = "rol")
     @JsonBackReference
     private List<Usuarios> usuarios;
+
+    public Roles(Long id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }    
 }

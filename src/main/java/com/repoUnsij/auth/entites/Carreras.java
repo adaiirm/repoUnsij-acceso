@@ -25,8 +25,4 @@ public class Carreras {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;   
     private String nombre;
-
-    @OneToMany(mappedBy = "carrera")
-    @JsonBackReference
-    private List<Usuarios> usuarios;
 }

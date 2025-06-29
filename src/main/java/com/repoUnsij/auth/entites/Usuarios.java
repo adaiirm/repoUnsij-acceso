@@ -31,9 +31,4 @@ public class Usuarios {
     @ManyToOne
     @JoinColumn(name = "rol_id")
     private Roles rol;
-
-    @ManyToOne
-    @JoinColumn(name = "carrera_id")
-    private Carreras carrera;
-
 }
